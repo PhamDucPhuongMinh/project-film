@@ -1,0 +1,56 @@
+.carousel__slider {
+  height: 600px;
+  position: relative;
+}
+
+.slider__infor {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  z-index: 1;
+}
+.infor__name {
+  font-size: 3.8rem;
+  margin-bottom: 10px;
+  color: var(--blue);
+  font-weight: 700;
+  max-width: 50%;
+  text-shadow: 1px 1px #000;
+}
+.infor__date {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.infor__overview {
+  color: var(--grey);
+  max-width: 50%;
+  margin-bottom: 15px;
+  line-height: 2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.slider__buttons {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1;
+}
+
+.slider__overlay {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to top, rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0));
+}
+
+.slider__buttons button {
+  margin: 0 3px;
+}

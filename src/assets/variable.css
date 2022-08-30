@@ -1,0 +1,12 @@
+:root {
+  --grey: #93969c;
+  --grey-hover: #7a7d82;
+  --grey-transparent: rgb(147, 150, 156, 0.7);
+  --red: #eb1b23;
+  --red-transparent: rgb(235, 27, 35, 0.7);
+  --red-hover: #ce191f;
+  --yellow: #f5c600;
+  --blue: #5179fe;
+  --background-light: #1b171d;
+  --background-dark: #1c1c1e;
+}

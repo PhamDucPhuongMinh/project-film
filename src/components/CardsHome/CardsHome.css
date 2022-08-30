@@ -1,0 +1,19 @@
+.cards-home {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.cards-home .mySwiper {
+  border-radius: 0;
+  padding: 0 5px;
+  margin-top: 10px;
+}
+
+.cards-home .mySwiper .swiper-pagination {
+  display: none;
+}
+
+.cards-home__title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
