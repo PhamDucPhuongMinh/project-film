@@ -18,13 +18,11 @@ export default function CardsHome(props) {
       <h3 className="cards-home__title">{props.title}</h3>
       <Swiper
         slidesPerView={1}
-        spaceBetween={30}
-        slidesPerGroup={5}
-        loop={true}
-        loopFillGroupWithBlank={true}
+        spaceBetween={10}
         pagination={{
-          clickable: true,
+          clickable: false,
         }}
+        loop={true}
         navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"
