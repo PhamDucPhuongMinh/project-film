@@ -5,6 +5,7 @@
   cursor: pointer;
   font-size: 1.8rem;
   transition: 0.2s linear;
+  text-decoration: none;
 }
 
 .btn.btn-primary {
@@ -49,4 +50,12 @@
   color: #fff;
   background-color: var(--blue);
   display: inline-block;
+}
+
+.color-grey {
+  color: var(--grey);
+}
+
+.color-white {
+  color: #fff;
 }

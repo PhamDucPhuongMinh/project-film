@@ -14,3 +14,9 @@ body {
   max-width: 1040px;
   margin: 0 auto;
 }
+
+@media only screen and (max-width: 1040px) {
+  .container {
+    padding: 0 20px;
+  }
+}

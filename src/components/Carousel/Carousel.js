@@ -40,7 +40,7 @@ export default function Carousel() {
         navigation={true}
         loop={true}
         modules={[Navigation, Autoplay]}
-        className="mySwiper container"
+        className="mySwiper container carousel"
       >
         {carouselList.map((item) => (
           <SwiperSlide key={item.id}>

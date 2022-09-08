@@ -1,0 +1,45 @@
+.display-video__number-of-episodes {
+  margin-top: 20px;
+  display: flex;
+}
+.number-of-episodes__list,
+.number-of-seasons__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.number-of-episodes__list .number-of-episodes__item,
+.number-of-seasons__list .number-of-seasons__item {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.number-of-episodes__item.number-of-episodes__item--active,
+.number-of-seasons__item.number-of-seasons__item--active {
+  color: var(--blue);
+}
+
+.ant-pagination .ant-pagination-item {
+  background-color: transparent;
+  border-color: #fff;
+  border-radius: 0;
+  transition: all 0s linear;
+  transform-origin: 50% 50%;
+}
+.ant-pagination .ant-pagination-item.ant-pagination-item-active {
+  background-color: #fff;
+}
+
+.ant-pagination .ant-pagination-item:not(.ant-pagination-item-active):hover {
+  border-color: var(--blue);
+}
+
+.ant-pagination .ant-pagination-item a {
+  color: #fff;
+}
+
+.ant-pagination .ant-pagination-item.ant-pagination-item-active a {
+  color: #000;
+}

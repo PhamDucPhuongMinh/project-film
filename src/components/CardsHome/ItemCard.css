@@ -6,10 +6,7 @@
   border-radius: 5px;
   overflow: hidden;
   background-color: var(--background-light);
-}
-
-.item-card:hover {
-  transform: scale(1.05);
+  text-decoration: none;
 }
 
 .item-card:hover .item-card--image img {
@@ -29,13 +26,19 @@
 
 .item-card .item-card--name {
   margin: 10px 5px;
-  color: var(--blue);
+  color: #fff;
   text-align: center;
+  line-height: 2rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
+  transition: all 0.1s linear;
+}
+
+.item-card:hover .item-card--name {
+  color: var(--blue);
 }
 
 .item-card .rating-star {

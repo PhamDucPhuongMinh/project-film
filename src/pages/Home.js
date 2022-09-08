@@ -47,15 +47,27 @@ export default function Home() {
     }
     callApi();
   }, []);
-  console.log(resultTopRatingTVShow);
   return (
     <>
       <Menu />
       <Carousel />
-      <CardsHome title="Popular Movie" inforCards={resultPopularMovie} />
-      <CardsHome title="Top Rating Movie" inforCards={resultTopRatingMovie} />
-      <CardsHome title="Popular TV Show" inforCards={resultPopularTVShow} />
       <CardsHome
+        category="movie"
+        title="Popular Movie"
+        inforCards={resultPopularMovie}
+      />
+      <CardsHome
+        category="movie"
+        title="Top Rating Movie"
+        inforCards={resultTopRatingMovie}
+      />
+      <CardsHome
+        category="tv"
+        title="Popular TV Show"
+        inforCards={resultPopularTVShow}
+      />
+      <CardsHome
+        category="tv"
         title="Top Rating TV Show"
         inforCards={resultTopRatingTVShow}
       />

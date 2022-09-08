@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import "antd/dist/antd.min.css";
 import "./index.css";
 import "./assets/variable.css";
 import "./assets/base.css";
 import "./assets/component.css";
+import "./assets/grid.css";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -11,7 +14,10 @@ import store from "./redux/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <div className="overlay hidden" id="overlay"></div>
+      <App />
+    </BrowserRouter>
   </Provider>
 );
 

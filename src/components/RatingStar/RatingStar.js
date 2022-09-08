@@ -13,7 +13,7 @@ export default function RatingStar(props) {
   }
   return (
     <span className={`rating-star ${ratingStyle}`}>
-      {props.rating} <FontAwesomeIcon icon={starSolid} />
+      {props.rating.toFixed(1)} <FontAwesomeIcon icon={starSolid} />
     </span>
   );
 }

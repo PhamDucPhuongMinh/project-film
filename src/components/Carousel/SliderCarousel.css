@@ -3,29 +3,34 @@
   position: relative;
 }
 
-.slider__infor {
+.slider__content {
+  display: flex;
   position: absolute;
   bottom: 50px;
-  left: 50px;
   z-index: 1;
 }
-.infor__name {
+
+.slider__infor {
+  width: 50%;
+  margin-left: 50px;
+}
+.slider__infor .infor__name {
   font-size: 3.8rem;
   margin-bottom: 10px;
   color: var(--blue);
   font-weight: 700;
-  max-width: 50%;
+  width: 150%;
   text-shadow: 1px 1px #000;
 }
-.infor__date {
+.slider__infor .infor__date {
   font-size: 2rem;
   font-weight: 300;
   margin-bottom: 10px;
 }
 
-.infor__overview {
-  color: var(--grey);
-  max-width: 50%;
+.slider__infor .infor__overview {
+  color: #bebebe;
+  width: 100%;
   margin-bottom: 15px;
   line-height: 2rem;
   overflow: hidden;
@@ -36,10 +41,10 @@
 }
 
 .slider__buttons {
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
-  z-index: 1;
+  width: 50%;
+  margin-right: 50px;
+  margin-top: auto;
+  text-align: right;
 }
 
 .slider__overlay {
@@ -51,6 +56,87 @@
   background: linear-gradient(to top, rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0));
 }
 
-.slider__buttons button {
+.slider__buttons .btn {
   margin: 0 3px;
+}
+
+@media only screen and (max-width: 930px) {
+  .slider__content {
+    flex-wrap: wrap;
+  }
+  .slider__infor {
+    width: 100%;
+    margin-right: 50px;
+  }
+  .slider__infor .infor__name {
+    width: 100%;
+  }
+  .slider__buttons {
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 0;
+    margin-top: 50px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .carousel__slider {
+    height: 450px;
+  }
+  .slider__infor .infor__name {
+    font-size: 3rem;
+  }
+  .slider__infor .infor__overview {
+    -webkit-line-clamp: 2;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .slider__infor .infor__name {
+    font-size: 2.5rem;
+  }
+  .slider__infor .infor__date {
+    font-size: 1.8rem;
+  }
+  .slider__content .slider__buttons .btn {
+    font-size: 1.6rem;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .carousel__slider {
+    height: 300px;
+  }
+  .slider__infor .infor__overview {
+    display: none;
+  }
+  .slider__infor .rating-star {
+    display: none;
+  }
+  .slider__buttons {
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .carousel__slider {
+    height: 200px;
+  }
+  .slider__infor .infor__name {
+    font-size: 2.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  .slider__infor .infor__date {
+    font-size: 1.5rem;
+  }
+  .slider__content .slider__buttons .btn {
+    font-size: 1rem;
+  }
 }
