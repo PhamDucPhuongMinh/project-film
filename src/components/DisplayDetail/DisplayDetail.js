@@ -52,7 +52,6 @@ export default function DisplayDetail({ id, category }) {
     callApi();
   }, [id, category]);
 
-  console.log(inforDetail);
   // get year
   let year = "";
   if (inforDetail.release_date || inforDetail.first_air_date) {

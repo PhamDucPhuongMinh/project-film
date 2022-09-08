@@ -4,6 +4,7 @@ import DisplayDetail from "../components/DisplayDetail/DisplayDetail";
 import Recommendations from "../components/Recommendations/Recommendations";
 import Menu from "../components/Menu/Menu";
 import DisplayPerson from "../components/DisplayPerson/DisplayPerson";
+import Footer from "../components/Footer/Footer";
 
 export default function WatchDetail() {
   // category = movie || tv || person
@@ -21,6 +22,7 @@ export default function WatchDetail() {
       ) : (
         <Recommendations id={id} category={category} />
       )}
+      <Footer />
     </>
   );
 }

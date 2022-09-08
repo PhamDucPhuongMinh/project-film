@@ -4,6 +4,7 @@ import Menu from "../components/Menu/Menu";
 import DisplayMovie from "../components/DisplayMovie/DisplayMovie";
 import DisplayTVShow from "../components/DisplayTVShow/DisplayTVShow";
 import Recommendations from "../components/Recommendations/Recommendations";
+import Footer from "../components/Footer/Footer";
 
 export default function WatchMovie() {
   let { id, category } = useParams();
@@ -17,6 +18,7 @@ export default function WatchMovie() {
         <DisplayTVShow id={id} />
       )}
       <Recommendations id={id} category={category} />
+      <Footer />
     </>
   );
 }

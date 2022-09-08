@@ -11,7 +11,6 @@ export default function DisplayListMovie(props) {
   const handleChangePagination = (e) => {
     setCurrentPage(e);
   };
-  console.log(currentPage);
   useEffect(() => {
     async function callAPI() {
       try {
@@ -20,14 +19,12 @@ export default function DisplayListMovie(props) {
           url: `${baseURL}${props.category}/popular?api_key=${keyAPI}&language=en-US&page=${currentPage}`,
         });
         setResultAPI(api.data);
-        console.log("hello");
       } catch (error) {
         console.log(error);
       }
     }
     callAPI();
   }, [props.category, currentPage]);
-  console.log(currentPage, resultAPI);
   let arrDataRender = [];
   let totalResult = 0;
   if (resultAPI) {

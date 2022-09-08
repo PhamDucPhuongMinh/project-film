@@ -22,7 +22,6 @@ export default function DisplayMovie({ id }) {
     }
     callAPI();
   }, [id]);
-  console.log(resultAPI);
   return (
     <div className="display-video container">
       <iframe

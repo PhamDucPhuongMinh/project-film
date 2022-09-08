@@ -1,52 +1,61 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "../components/Carousel/Carousel";
 import CardsHome from "../components/CardsHome/CardsHome";
 import Menu from "../components/Menu/Menu";
-import { useEffect } from "react";
 import axios from "axios";
 import { baseURL, keyAPI } from "../service/config";
-import { useState } from "react";
+import Footer from "../components/Footer/Footer";
+import { addCardsHome } from "../redux/actions/cardsHomeAction";
+import { useDispatch, useSelector } from "react-redux";
+import { cardsHomeSelector } from "../redux/selectors";
 
 export default function Home() {
-  const [resultPopularMovie, setResultPopularMovie] = useState([]);
-  const [resultTopRatingMovie, setResultTopRatingMovie] = useState([]);
-  const [resultPopularTVShow, setResultPopularTVShow] = useState([]);
-  const [resultTopRatingTVShow, setResultTopRatingTVShow] = useState([]);
+  let cardHomeResult = useSelector(cardsHomeSelector);
+  const dispath = useDispatch();
+
   useEffect(() => {
     async function callApi() {
+      const resultAPI = {
+        popularMovie: [],
+        topRatingMovie: [],
+        popularTVShow: [],
+        topRatingTVShow: [],
+      };
       try {
         // call api popular movie
         const apiPopularMovie = await axios({
           method: "get",
           url: `${baseURL}movie/popular?api_key=${keyAPI}&language=en-US&page=1`,
         });
-        setResultPopularMovie(apiPopularMovie.data.results);
+        resultAPI.popularMovie = [...apiPopularMovie.data.results];
 
         // call api top rating movie
         const apiTopRatingMovie = await axios({
           method: "get",
           url: `${baseURL}movie/top_rated?api_key=${keyAPI}&language=en-US&page=1`,
         });
-        setResultTopRatingMovie(apiTopRatingMovie.data.results);
+        resultAPI.topRatingMovie = [...apiTopRatingMovie.data.results];
+
         // call api popular TVShow
         const apiPopularTVShow = await axios({
           method: "get",
           url: `${baseURL}tv/popular?api_key=${keyAPI}&language=en-US&page=1`,
         });
-        setResultPopularTVShow(apiPopularTVShow.data.results);
+        resultAPI.popularTVShow = [...apiPopularTVShow.data.results];
 
         // call api top rating TVShow
         const apiTopRatingTVShow = await axios({
           method: "get",
           url: `${baseURL}tv/top_rated?api_key=${keyAPI}&language=en-US&page=1`,
         });
-        setResultTopRatingTVShow(apiTopRatingTVShow.data.results);
+        resultAPI.topRatingTVShow = [...apiTopRatingTVShow.data.results];
+        dispath(addCardsHome(resultAPI));
       } catch (err) {
         console.log(err);
       }
     }
     callApi();
-  }, []);
+  }, [dispath]);
   return (
     <>
       <Menu />
@@ -54,23 +63,24 @@ export default function Home() {
       <CardsHome
         category="movie"
         title="Popular Movie"
-        inforCards={resultPopularMovie}
+        inforCards={cardHomeResult.popularMovie}
       />
       <CardsHome
         category="movie"
         title="Top Rating Movie"
-        inforCards={resultTopRatingMovie}
+        inforCards={cardHomeResult.topRatingMovie}
       />
       <CardsHome
         category="tv"
         title="Popular TV Show"
-        inforCards={resultPopularTVShow}
+        inforCards={cardHomeResult.popularTVShow}
       />
       <CardsHome
         category="tv"
         title="Top Rating TV Show"
-        inforCards={resultTopRatingTVShow}
+        inforCards={cardHomeResult.topRatingTVShow}
       />
+      <Footer />
     </>
   );
 }

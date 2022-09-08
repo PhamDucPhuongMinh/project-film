@@ -29,7 +29,6 @@ export default function DisplayPerson({ id, category }) {
     const yy = date.getFullYear();
     return `${dd}-${mm}-${yy}`;
   };
-
   return (
     <div className="display-detail container">
       <div className="display-detail__poster">
